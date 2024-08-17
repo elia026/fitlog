@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FitLog</h1>
+
+        <!-- Persoonlijk Profiel Sectie -->
+        <div class="section">
+            <h2>Persoonlijk Profiel</h2>
+            <form id="profileForm">
+                <label for="username">Gebruikersnaam:</label>
+                <input type="text" id="username" required>
+
+                <label for="birthdate">Geboortedatum:</label>
+                <input type="date" id="birthdate" required>
+
+                <label for="age">Leeftijd:</label>
+                <input type="number" id="age" required>
+
+                <label for="weight">Huidig Gewicht (kg):</label>
+                <input type="number" id="weight" step="0.1" required>
+
+                <label for="height">Lengte (cm):</label>
+                <input type="number" id="height" required>
+
+                <label for="goalWeight">Gewichtsdoel (kg):</label>
+                <input type="number" id="goalWeight" step="0.1" required>
+
+                <button type="button" onclick="saveProfile()">Opslaan</button>
+            </form>
+        </div>
+
+        <!-- Gewichtslogboek Sectie -->
+        <div class="section">
+            <h2>Gewichtslogboek</h2>
+            <form id="weightForm">
+                <label for="newWeight">Voer je gewicht in (kg):</label>
+                <input type="number" id="newWeight" step="0.1" required>
+                <button type="button" onclick="addWeight()">Toevoegen</button>
+            </form>
+            <div id="weightLog"></div>
+        </div>
+
+        <!-- Coopertest Logboek Sectie -->
+        <div class="section">
+            <h2>Coopertest Logboek</h2>
+            <p class="description">
+                De Coopertest is een fysieke conditietest waarbij je in 12 minuten zoveel mogelijk afstand moet afleggen.
+                Voer hieronder de datum en de afgelegde afstand in meters in om je voortgang bij te houden.
+            </p>
+            <form id="cooperTestForm">
+                <label for="cooperDate">Datum:</label>
+                <input type="date" id="cooperDate" required>
+
+                <label for="distance">Afgelegde afstand (meters):</label>
+                <input type="number" id="distance" required>
+
+                <button type="button" onclick="addCooperTest()">Toevoegen</button>
+            </form>
+            <div id="cooperLog"></div>
+        </div>
+
+        <!-- Airborne Benchmark WOD Sectie -->
+        <div class="section">
+            <h2>Airborne Benchmark WOD</h2>
+            <p class="description">
+                De Airborne Benchmark WOD is een uitdagende AMRAP (As Many Rounds As Possible) van 30 minuten.
+                Je probeert in 30 minuten zoveel mogelijk rondes te voltooien van de volgende oefeningen:
+            </p>
+            <ul class="workout-list">
+                <li>400 meter Run</li>
+                <li>30x Air Squats</li>
+                <li>30x Butterfly Sit-Ups</li>
+                <li>15x Push-Ups</li>
+                <li>5x Power Band Pull-Ups</li>
+            </ul>
+            <form id="airborneWodForm">
+                <label for="airborneDate">Datum:</label>
+                <input type="date" id="airborneDate" required>
+
+                <label for="roundsCompleted">Aantal Voltooide Ronden:</label>
+                <input type="number" id="roundsCompleted" step="0.1" required>
+
+                <button type="button" onclick="addAirborneWod()">Toevoegen</button>
+            </form>
+            <div id="airborneLog"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
